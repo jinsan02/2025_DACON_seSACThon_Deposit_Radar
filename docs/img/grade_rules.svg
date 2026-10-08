@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 0 1024 402" width="1024" height="402" role="img" aria-label="등급 라벨이 있으면 그것을 쓰고, 없으면 경매 RED, 가압류 AMBER, 압류 RED, 주의 AMBER, 그 외 GREEN 순으로 판정한다. 가압류를 먼저 검사해야 압류로 잘못 잡히지 않는다. 등급별 핵심 경고 2개와 임대인 문자 톤은 고정이다">
+<title>등급 판정 — 가압류를 압류보다 먼저 본다</title>
+<style>
+  text { font-family: system-ui, -apple-system, "Segoe UI", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif; fill: #1f2328; }
+  .ink { fill: #1f2328; } .sub { fill: #59636e; } .muted { fill: #818b98; } .lbl { fill: #59636e; }
+  .grid { stroke: #eaeef2; stroke-width: 1; } .base { stroke: #afb8c1; stroke-width: 1; }
+  .s1 { fill: #2a78d6; } .s2 { fill: #eb6834; } .s3 { fill: #1baf7a; } .s4 { fill: #eda100; }
+  .s5 { fill: #e87ba4; } .s6 { fill: #008300; } .s7 { fill: #4a3aa7; } .s8 { fill: #e34948; }
+  .dim { fill: #d0d7de; } .dim2 { fill: #8c959f; }
+  .box  { fill: #f6f8fa; stroke: #d0d7de; stroke-width: 1.2; }
+  .em   { fill: #e3eefb; stroke: #2a78d6; stroke-width: 1.6; }
+  .mute { fill: #ffffff; stroke: #d0d7de; stroke-width: 1.2; }
+  .k-auto { fill: #e0f5ec; stroke: #1baf7a; stroke-width: 1.4; }
+  .k-man  { fill: #fdf3d8; stroke: #eda100; stroke-width: 1.4; }
+  .k-todo { fill: none; stroke: #8c959f; stroke-width: 1.2; stroke-dasharray: 5 4; }
+  .grp { fill: none; stroke: #d0d7de; stroke-width: 1; stroke-dasharray: 3 3; }
+  .ln { stroke: #6e7781; stroke-width: 1.4; fill: none; } .ah { fill: #6e7781; }
+  .ln-em { stroke: #2a78d6; stroke-width: 2; fill: none; } .ah-em { fill: #2a78d6; }
+  .dash { stroke-dasharray: 5 4; }
+  @media (prefers-color-scheme: dark) {
+    text, .ink { fill: #e6edf3; } .sub, .lbl { fill: #9198a1; } .muted { fill: #8b949e; }
+    .grid { stroke: #262c36; } .base { stroke: #59636e; }
+    .s1 { fill: #3987e5; } .s2 { fill: #d95926; } .s3 { fill: #199e70; } .s4 { fill: #c98500; }
+    .s5 { fill: #d55181; } .s6 { fill: #008300; } .s7 { fill: #9085e9; } .s8 { fill: #e66767; }
+    .dim { fill: #3d444d; } .dim2 { fill: #6e7681; }
+    .box  { fill: #161b22; stroke: #3d444d; }
+    .em   { fill: #0f2340; stroke: #3987e5; }
+    .mute { fill: #0d1117; stroke: #3d444d; }
+    .k-auto { fill: #0c2a1f; stroke: #199e70; } .k-man { fill: #2e2408; stroke: #c98500; } .k-todo { stroke: #6e7681; }
+    .grp { stroke: #3d444d; }
+    .ln { stroke: #8b949e; } .ah { fill: #8b949e; } .ln-em { stroke: #3987e5; } .ah-em { fill: #3987e5; }
+  }
+</style>
+<text x="0" y="24" font-size="18" font-weight="600" class="ink">등급 판정 — 가압류를 압류보다 먼저 본다</text><text x="0" y="48" font-size="14" class="sub">명시적 등급 라벨이 있으면 그대로, 없으면 키워드 순서대로 · 등급마다 LLM에 넣는 핵심 경고는 고정 문안</text>
+<g transform="translate(0,64)">
+<text x="0" y="22" font-size="14" class="ink" font-weight="600">키워드 검사 순서</text>
+<rect class="box" x="0" y="36" width="130" height="52" rx="8"/>
+<text x="65" y="57" font-size="14" text-anchor="middle" font-weight="600" class="ink">경매</text>
+<text x="65" y="76" font-size="13" text-anchor="middle" class="sub">→ RED</text>
+<polyline class="ln" points="130,62 141,62"/>
+<polygon class="ah" points="150,62 141,57 141,67"/>
+<rect class="em" x="150" y="36" width="130" height="52" rx="8"/>
+<text x="215" y="57" font-size="14" text-anchor="middle" font-weight="600" class="ink">가압류</text>
+<text x="215" y="76" font-size="13" text-anchor="middle" class="sub">→ AMBER</text>
+<polyline class="ln" points="280,62 291,62"/>
+<polygon class="ah" points="300,62 291,57 291,67"/>
+<rect class="box" x="300" y="36" width="130" height="52" rx="8"/>
+<text x="365" y="57" font-size="14" text-anchor="middle" font-weight="600" class="ink">압류</text>
+<text x="365" y="76" font-size="13" text-anchor="middle" class="sub">→ RED</text>
+<polyline class="ln" points="430,62 441,62"/>
+<polygon class="ah" points="450,62 441,57 441,67"/>
+<rect class="box" x="450" y="36" width="130" height="52" rx="8"/>
+<text x="515" y="57" font-size="14" text-anchor="middle" font-weight="600" class="ink">주의</text>
+<text x="515" y="76" font-size="13" text-anchor="middle" class="sub">→ AMBER</text>
+<polyline class="ln" points="580,62 591,62"/>
+<polygon class="ah" points="600,62 591,57 591,67"/>
+<rect class="box" x="600" y="36" width="130" height="52" rx="8"/>
+<text x="665" y="57" font-size="14" text-anchor="middle" font-weight="600" class="ink">그 외</text>
+<text x="665" y="76" font-size="13" text-anchor="middle" class="sub">→ GREEN</text>
+<text x="760" y="58" font-size="12" class="lbl">"가압류"에는 "압류"가 들어 있어</text>
+<text x="760" y="76" font-size="12" class="lbl">순서가 바뀌면 AMBER가 RED가 된다</text>
+<text x="0" y="136" font-size="14" class="ink" font-weight="600">등급별 고정 경고 (프롬프트에 그대로 들어간다)</text>
+<rect class="box" x="0" y="150" width="320" height="100" rx="8"/>
+<text x="160" y="176" font-size="14" text-anchor="middle" font-weight="600" class="ink">RED · 경매/압류</text>
+<text x="160" y="195" font-size="13" text-anchor="middle" class="sub">이사·전출 절대 금지 (대항력)</text>
+<text x="160" y="214" font-size="13" text-anchor="middle" class="sub">배당요구종기일 엄수</text>
+<text x="160" y="233" font-size="13" text-anchor="middle" class="sub">임대인 문자: 법적 조치 예고 장문</text>
+<rect class="box" x="340" y="150" width="320" height="100" rx="8"/>
+<text x="500" y="176" font-size="14" text-anchor="middle" font-weight="600" class="ink">AMBER · 가압류</text>
+<text x="500" y="195" font-size="13" text-anchor="middle" class="sub">만료 2개월 전 갱신 거절 통보</text>
+<text x="500" y="214" font-size="13" text-anchor="middle" class="sub">이사 시 임차권등기명령 먼저</text>
+<text x="500" y="233" font-size="13" text-anchor="middle" class="sub">임대인 문자: 반환 계획을 묻는 장문</text>
+<rect class="box" x="680" y="150" width="320" height="100" rx="8"/>
+<text x="840" y="176" font-size="14" text-anchor="middle" font-weight="600" class="ink">GREEN · 단순 변경</text>
+<text x="840" y="195" font-size="13" text-anchor="middle" class="sub">3~6개월마다 등기부 확인</text>
+<text x="840" y="214" font-size="13" text-anchor="middle" class="sub">증액 시 확정일자 새로 받기</text>
+<text x="840" y="233" font-size="13" text-anchor="middle" class="sub">임대인 문자: 작성 안 함</text>
+<text x="0" y="290" font-size="13" class="lbl">LLM은 이 지침 위에서 상황 요약 · 체크리스트 · Q&amp;A만 쓴다. 리포트 끝에 "AI 분석 결과이며 법적 효력이 없다"는 안내가 붙는다.</text>
+</g>
+</svg>
